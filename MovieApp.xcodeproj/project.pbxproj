@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9283CB132C09F872003750E1 /* MovieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB122C09F872003750E1 /* MovieAppApp.swift */; };
-		9283CB152C09F872003750E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB142C09F872003750E1 /* ContentView.swift */; };
+		9283CB152C09F872003750E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB142C09F872003750E1 /* HomeView.swift */; };
 		9283CB172C09F875003750E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9283CB162C09F875003750E1 /* Assets.xcassets */; };
 		9283CB1A2C09F875003750E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9283CB192C09F875003750E1 /* Preview Assets.xcassets */; };
 		9283CB242C09F877003750E1 /* MovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB232C09F877003750E1 /* MovieAppTests.swift */; };
@@ -16,6 +16,10 @@
 		9283CB302C09F877003750E1 /* MovieAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB2F2C09F877003750E1 /* MovieAppUITestsLaunchTests.swift */; };
 		9283CB3D2C0A31EC003750E1 /* MovieDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB3C2C0A31EC003750E1 /* MovieDatabase.swift */; };
 		9283CB402C0A3C40003750E1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9283CB3F2C0A3C40003750E1 /* Kingfisher */; };
+		9283CB422C0B20BC003750E1 /* MovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB412C0B20BC003750E1 /* MovieCardView.swift */; };
+		9283CB442C0B20FC003750E1 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB432C0B20FC003750E1 /* MovieService.swift */; };
+		9283CB462C0B211B003750E1 /* MovieSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB452C0B211B003750E1 /* MovieSectionView.swift */; };
+		9283CB482C0B2155003750E1 /* ExpandableMovieSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB472C0B2155003750E1 /* ExpandableMovieSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 /* Begin PBXFileReference section */
 		9283CB0F2C09F872003750E1 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283CB122C09F872003750E1 /* MovieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppApp.swift; sourceTree = "<group>"; };
-		9283CB142C09F872003750E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9283CB142C09F872003750E1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9283CB162C09F875003750E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9283CB192C09F875003750E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9283CB1F2C09F877003750E1 /* MovieAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +51,10 @@
 		9283CB2D2C09F877003750E1 /* MovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppUITests.swift; sourceTree = "<group>"; };
 		9283CB2F2C09F877003750E1 /* MovieAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9283CB3C2C0A31EC003750E1 /* MovieDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatabase.swift; sourceTree = "<group>"; };
+		9283CB412C0B20BC003750E1 /* MovieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardView.swift; sourceTree = "<group>"; };
+		9283CB432C0B20FC003750E1 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		9283CB452C0B211B003750E1 /* MovieSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSectionView.swift; sourceTree = "<group>"; };
+		9283CB472C0B2155003750E1 /* ExpandableMovieSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableMovieSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +106,13 @@
 		9283CB112C09F872003750E1 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				9283CB492C0B21FF003750E1 /* Views */,
 				9283CB122C09F872003750E1 /* MovieAppApp.swift */,
-				9283CB142C09F872003750E1 /* ContentView.swift */,
+				9283CB142C09F872003750E1 /* HomeView.swift */,
+				9283CB3C2C0A31EC003750E1 /* MovieDatabase.swift */,
+				9283CB432C0B20FC003750E1 /* MovieService.swift */,
 				9283CB162C09F875003750E1 /* Assets.xcassets */,
 				9283CB182C09F875003750E1 /* Preview Content */,
-				9283CB3C2C0A31EC003750E1 /* MovieDatabase.swift */,
 			);
 			path = MovieApp;
 			sourceTree = "<group>";
@@ -130,6 +140,16 @@
 				9283CB2F2C09F877003750E1 /* MovieAppUITestsLaunchTests.swift */,
 			);
 			path = MovieAppUITests;
+			sourceTree = "<group>";
+		};
+		9283CB492C0B21FF003750E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9283CB452C0B211B003750E1 /* MovieSectionView.swift */,
+				9283CB472C0B2155003750E1 /* ExpandableMovieSectionView.swift */,
+				9283CB412C0B20BC003750E1 /* MovieCardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +289,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9283CB3D2C0A31EC003750E1 /* MovieDatabase.swift in Sources */,
-				9283CB152C09F872003750E1 /* ContentView.swift in Sources */,
+				9283CB462C0B211B003750E1 /* MovieSectionView.swift in Sources */,
+				9283CB152C09F872003750E1 /* HomeView.swift in Sources */,
 				9283CB132C09F872003750E1 /* MovieAppApp.swift in Sources */,
+				9283CB422C0B20BC003750E1 /* MovieCardView.swift in Sources */,
+				9283CB482C0B2155003750E1 /* ExpandableMovieSectionView.swift in Sources */,
+				9283CB442C0B20FC003750E1 /* MovieService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
