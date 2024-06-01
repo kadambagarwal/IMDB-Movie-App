@@ -22,7 +22,6 @@ struct HomeView: View {
                 ExpandableMovieSectionView(title: "Top Rated", movies: $movieService.topRatedMovies, loadMovies: movieService.loadMovies, endpoint: .topRated)
             }
         }
-        .onAppear(perform: { movieService.loadMovies(endpoint: .trending, timePeriod: .day) })
     }
 }
 

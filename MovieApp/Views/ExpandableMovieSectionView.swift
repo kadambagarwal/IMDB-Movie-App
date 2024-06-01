@@ -19,7 +19,6 @@ struct ExpandableMovieSectionView: View {
         self._movies = movies
         self.loadMovies = loadMovies
         self.endpoint = endpoint
-        self.loadMovies(endpoint)
     }
     
     var body: some View {
@@ -55,5 +54,8 @@ struct ExpandableMovieSectionView: View {
         .background(Color.gray.opacity(0.1))
         .cornerRadius(10)
         .shadow(radius: 10)
+        .onAppear {
+            loadMovies(endpoint)
+        }
     }
 }

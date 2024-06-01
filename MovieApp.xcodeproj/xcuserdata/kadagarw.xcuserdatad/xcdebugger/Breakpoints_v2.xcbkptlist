@@ -252,11 +252,11 @@
                   endingLineNumber = "55">
                </Location>
                <Location
-                  uuid = "A264CB61-C547-4CF4-B6AB-DC09384ADD7F - a037f4ffc740177e"
+                  uuid = "A264CB61-C547-4CF4-B6AB-DC09384ADD7F - 268c5f6b6e09b248"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieApp.MovieDatabase.fetchMovies(endpoint: MovieApp.MovieEndpoint, timePeriod: Swift.Optional&lt;MovieApp.TrendingTimePeriod&gt;, completion: (Swift.Result&lt;MovieApp.MovieResponse, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "MovieApp.MovieDatabase.fetchMovies(endpoint: MovieApp.MovieEndpoint, timePeriod: Swift.Optional&lt;MovieApp.TrendingTimePeriod&gt;, completion: (Swift.Result&lt;MovieApp.MovieResponse, Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "MovieApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kadagarw/Desktop/MovieApp/MovieApp/MovieDatabase.swift"
