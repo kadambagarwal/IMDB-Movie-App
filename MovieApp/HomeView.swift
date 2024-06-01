@@ -13,19 +13,16 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack {
-                MovieSectionView(title: "Trending", movies: $movieService.trendingMovies, loadMovies: { timePeriod in
-                                    let endpoint: MovieEndpoint = timePeriod == "Day" ? .trendingToday : .trendingThisWeek
-                                    self.movieService.loadMovies(timePeriod: timePeriod, endpoint: endpoint)
-                                })
+                TrendingSectionView(title: "Trending", movies: $movieService.trendingMovies, loadMovies: movieService.loadMovies)
                 SectionSpacer()
                 ExpandableMovieSectionView(title: "Now Playing", movies: $movieService.nowPlayingMovies, loadMovies: movieService.loadMovies, endpoint: .nowPlaying)
                 SectionSpacer()
-                ExpandableMovieSectionView(title: "Popular", movies: $movieService.popularMovies, loadMovies: movieService.loadMovies, endpoint: .popular)
+                ExpandableMovieSectionView(title: "Upcoming", movies: $movieService.popularMovies, loadMovies: movieService.loadMovies, endpoint: .popular)
                 SectionSpacer()
                 ExpandableMovieSectionView(title: "Top Rated", movies: $movieService.topRatedMovies, loadMovies: movieService.loadMovies, endpoint: .topRated)
             }
         }
-        .onAppear(perform: { movieService.loadMovies(timePeriod: "Day", endpoint: .trendingToday) })
+        .onAppear(perform: { movieService.loadMovies(endpoint: .trending, timePeriod: .day) })
     }
 }
 

@@ -14,13 +14,17 @@ class MovieService: ObservableObject {
     @Published var topRatedMovies = [Movie]()
     private let movieDatabase = MovieDatabase()
     
-    func loadMovies(timePeriod: String, endpoint: MovieEndpoint) {
-        movieDatabase.fetchMovies(endpoint: endpoint) { result in
+    func loadMovies(endpoint: MovieEndpoint) {
+        loadMovies(endpoint: endpoint, timePeriod: nil)
+    }
+    
+    func loadMovies(endpoint: MovieEndpoint, timePeriod: TrendingTimePeriod?) {
+        movieDatabase.fetchMovies(endpoint: endpoint, timePeriod: timePeriod) { result in
             switch result {
             case .success(let movieResponse):
                 DispatchQueue.main.async {
                     switch endpoint {
-                    case .trendingToday, .trendingThisWeek:
+                    case .trending:
                         self.trendingMovies = movieResponse.results
                     case .nowPlaying:
                         self.nowPlayingMovies = movieResponse.results

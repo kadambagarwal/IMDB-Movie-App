@@ -10,16 +10,16 @@ import SwiftUI
 struct ExpandableMovieSectionView: View {
     var title: String
     @Binding var movies: [Movie]
-    var loadMovies: (String, MovieEndpoint) -> Void
+    var loadMovies: (MovieEndpoint) -> Void
     var endpoint: MovieEndpoint
     @State private var isExpanded = true
     
-    init(title: String, movies: Binding<[Movie]>, loadMovies: @escaping (String, MovieEndpoint) -> Void, endpoint: MovieEndpoint) {
+    init(title: String, movies: Binding<[Movie]>, loadMovies: @escaping (MovieEndpoint) -> Void, endpoint: MovieEndpoint) {
         self.title = title
         self._movies = movies
         self.loadMovies = loadMovies
         self.endpoint = endpoint
-        self.loadMovies("Day", endpoint)
+        self.loadMovies(endpoint)
     }
     
     var body: some View {
@@ -32,7 +32,7 @@ struct ExpandableMovieSectionView: View {
                 Button(action: {
                     isExpanded.toggle()
                     if isExpanded {
-                        loadMovies("Day", endpoint)
+                        loadMovies(endpoint)
                     }
                 }) {
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")

@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct MovieSectionView: View {
+struct TrendingSectionView: View {
     var title: String
     @Binding var movies: [Movie]
-    @State private var timePeriod = "Day"
-    var loadMovies: (String) -> Void
+    @State private var timePeriod = TrendingTimePeriod.day
+    var loadMovies: (MovieEndpoint,TrendingTimePeriod) -> Void
     
-    init(title: String, movies: Binding<[Movie]>, loadMovies: @escaping (String) -> Void) {
+    init(title: String, movies: Binding<[Movie]>, loadMovies: @escaping (MovieEndpoint, TrendingTimePeriod) -> Void) {
         self.title = title
         self._movies = movies
         self.loadMovies = loadMovies
@@ -31,13 +31,13 @@ struct MovieSectionView: View {
                     .bold()
                 Spacer()
                 Picker("", selection: $timePeriod) {
-                    Text("Today").tag("Day")
-                    Text("This week").tag("Week")
+                    Text("Today").tag(TrendingTimePeriod.day)
+                    Text("This week").tag(TrendingTimePeriod.week)
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .frame(width: 150)
                 .onChange(of: timePeriod, perform: { value in
-                                    loadMovies(value)
+                    loadMovies(.trending, value)
                                 })
             }
             .padding(.horizontal)
@@ -55,5 +55,8 @@ struct MovieSectionView: View {
         .background(Color.gray.opacity(0.1))
         .cornerRadius(10)
         .shadow(radius: 10)
+        .onAppear {
+            loadMovies(.trending, timePeriod)
+        }
     }
 }

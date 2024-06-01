@@ -22,8 +22,12 @@ enum MovieEndpoint: String {
     case popular = "popular"
     case nowPlaying = "now_playing"
     case topRated = "top_rated"
-    case trendingToday = "trending/movie/day"
-    case trendingThisWeek = "trending/movie/week"
+    case trending = "trending"
+}
+
+enum TrendingTimePeriod: String {
+    case day = "day"
+    case week = "week"
 }
 
 enum MovieDatabaseError: Error {
@@ -34,11 +38,12 @@ final class MovieDatabase {
     private let apiKey = "c77a451f55684047265eed8393fe387d"
     private let baseUrl = "https://api.themoviedb.org/3"
     
-    func fetchMovies(endpoint: MovieEndpoint, completion: @escaping (Result<MovieResponse, Error>) -> Void) {
+    func fetchMovies(endpoint: MovieEndpoint, timePeriod: TrendingTimePeriod?, completion: @escaping (Result<MovieResponse, Error>) -> Void) {
         let urlString: String
         switch endpoint {
-        case .trendingToday, .trendingThisWeek:
-            urlString = "\(baseUrl)/\(endpoint.rawValue)?api_key=\(apiKey)"
+        case .trending:
+            guard let timePeriod = timePeriod else {return}
+            urlString = "\(baseUrl)/\(endpoint.rawValue)/movie/\(timePeriod.rawValue)?api_key=\(apiKey)"
         default:
             urlString = "\(baseUrl)/movie/\(endpoint.rawValue)?api_key=\(apiKey)"
         }

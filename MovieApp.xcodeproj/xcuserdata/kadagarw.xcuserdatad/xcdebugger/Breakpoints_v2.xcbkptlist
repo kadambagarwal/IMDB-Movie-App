@@ -14,10 +14,40 @@
             filePath = "MovieApp/MovieService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "loadMovies(timePeriod:endpoint:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "loadMovies(endpoint:timePeriod:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AE15DDBF-4053-40B3-BA97-124BA5EEAA89 - 8ac580b754bf0bde"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;MovieApp.MovieResponse, Swift.Error&gt;) -&gt; () in MovieApp.MovieService.loadMovies(endpoint: MovieApp.MovieEndpoint, timePeriod: Swift.Optional&lt;MovieApp.TrendingTimePeriod&gt;) -&gt; ()"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadagarw/Desktop/MovieApp/MovieApp/MovieService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "AE15DDBF-4053-40B3-BA97-124BA5EEAA89 - 8ac580b754bf0bde"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;MovieApp.MovieResponse, Swift.Error&gt;) -&gt; () in MovieApp.MovieService.loadMovies(endpoint: MovieApp.MovieEndpoint, timePeriod: Swift.Optional&lt;MovieApp.TrendingTimePeriod&gt;) -&gt; ()"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadagarw/Desktop/MovieApp/MovieApp/MovieService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,9 +60,9 @@
             filePath = "MovieApp/MovieDatabase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "fetchMovies(endpoint:completion:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "fetchMovies(endpoint:timePeriod:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -66,11 +96,11 @@
                   endingLineNumber = "39">
                </Location>
                <Location
-                  uuid = "CFB61399-3E25-43EA-A468-5E11DDB16FCC - 5fd1355a8673cbc6"
+                  uuid = "CFB61399-3E25-43EA-A468-5E11DDB16FCC - 94ac9abe4de6d81d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.String) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.ScrollView&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in MovieApp.TrendingSectionView.body.getter : some"
+                  symbolName = "closure #2 (MovieApp.TrendingTimePeriod) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.ScrollView&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in MovieApp.TrendingSectionView.body.getter : some"
                   moduleName = "MovieApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kadagarw/Desktop/MovieApp/MovieApp/Views/TrendingSectionView.swift"
@@ -158,6 +188,116 @@
             endingLineNumber = "26"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F90B78F8-F7CF-4E62-89D9-B5E0B38B80A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/Views/TrendingSectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60E1A499-2088-4DF2-AC9D-B24A54509FED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/MovieDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "fetchMovies(endpoint:timePeriod:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A264CB61-C547-4CF4-B6AB-DC09384ADD7F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/MovieDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "fetchMovies(endpoint:timePeriod:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A264CB61-C547-4CF4-B6AB-DC09384ADD7F - a037f4ffc740177e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieApp.MovieDatabase.fetchMovies(endpoint: MovieApp.MovieEndpoint, timePeriod: Swift.Optional&lt;MovieApp.TrendingTimePeriod&gt;, completion: (Swift.Result&lt;MovieApp.MovieResponse, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadagarw/Desktop/MovieApp/MovieApp/MovieDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55">
+               </Location>
+               <Location
+                  uuid = "A264CB61-C547-4CF4-B6AB-DC09384ADD7F - a037f4ffc740177e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieApp.MovieDatabase.fetchMovies(endpoint: MovieApp.MovieEndpoint, timePeriod: Swift.Optional&lt;MovieApp.TrendingTimePeriod&gt;, completion: (Swift.Result&lt;MovieApp.MovieResponse, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadagarw/Desktop/MovieApp/MovieApp/MovieDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E16FC8FB-502D-41A1-886D-87091B42CAD2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/MovieDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "fetchMovies(endpoint:timePeriod:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09351C57-B689-4EBD-AB35-AFE84DA90495"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/MovieDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "fetchMovies(endpoint:timePeriod:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
