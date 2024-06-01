@@ -10,30 +10,97 @@ import Kingfisher
 
 struct MovieView: View {
     @State private var trendingMovies = [Movie]()
+    @State private var nowPlayingMovies = [Movie]()
+    @State private var popularMovies = [Movie]()
+    @State private var topRatedMovies = [Movie]()
     private let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
     private let movieDatabase = MovieDatabase()
     
     var body: some View {
         ScrollView {
             VStack {
-                MovieSectionView(title: "Trending", movies: $trendingMovies, loadMovies: loadTrendingMovies)
+                MovieSectionView(title: "Trending", movies: $trendingMovies, loadMovies: { timePeriod in
+                                    let endpoint: MovieEndpoint = timePeriod == "Day" ? .trendingToday : .trendingThisWeek
+                                    self.loadMovies(timePeriod: timePeriod, endpoint: endpoint)
+                                })
+                ExpandableMovieSectionView(title: "Now Playing", movies: $nowPlayingMovies, loadMovies: loadMovies, endpoint: .nowPlaying)
+                ExpandableMovieSectionView(title: "Popular", movies: $popularMovies, loadMovies: loadMovies, endpoint: .popular)
+                ExpandableMovieSectionView(title: "Top Rated", movies: $topRatedMovies, loadMovies: loadMovies, endpoint: .topRated)
             }
         }
-        .onAppear(perform: { loadTrendingMovies(timePeriod: "Day") })
+        .onAppear(perform: { loadMovies(timePeriod: "Day", endpoint: .trendingToday) })
     }
     
-    func loadTrendingMovies(timePeriod: String) {
-        let endpoint: MovieEndpoint = timePeriod == "Day" ? .trendingToday : .trendingThisWeek
+    func loadMovies(timePeriod: String, endpoint: MovieEndpoint) {
         movieDatabase.fetchMovies(endpoint: endpoint) { result in
             switch result {
             case .success(let movieResponse):
                 DispatchQueue.main.async {
-                    self.trendingMovies = movieResponse.results
+                    switch endpoint {
+                    case .trendingToday, .trendingThisWeek:
+                        self.trendingMovies = movieResponse.results
+                    case .nowPlaying:
+                        self.nowPlayingMovies = movieResponse.results
+                    case .popular:
+                        self.popularMovies = movieResponse.results
+                    case .topRated:
+                        self.topRatedMovies = movieResponse.results
+                    }
                 }
             case .failure(let error):
                 print("Error: \(error)")
             }
         }
+    }
+}
+
+struct ExpandableMovieSectionView: View {
+    var title: String
+    @Binding var movies: [Movie]
+    var loadMovies: (String, MovieEndpoint) -> Void
+    var endpoint: MovieEndpoint
+    @State private var isExpanded = false
+    
+    init(title: String, movies: Binding<[Movie]>, loadMovies: @escaping (String, MovieEndpoint) -> Void, endpoint: MovieEndpoint) {
+        self.title = title
+        self._movies = movies
+        self.loadMovies = loadMovies
+        self.endpoint = endpoint
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text(title)
+                    .font(.title2)
+                    .bold()
+                Spacer()
+                Button(action: {
+                    isExpanded.toggle()
+                    if isExpanded {
+                        loadMovies("Day", endpoint)
+                    }
+                }) {
+                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                }
+            }
+            .padding(.horizontal)
+            
+            if isExpanded {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 20) {
+                        ForEach(movies) { movie in
+                            MovieCardView(movie: movie)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+            }
+        }
+        .padding()
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(10)
+        .shadow(radius: 10)
     }
 }
 
@@ -66,7 +133,9 @@ struct MovieSectionView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .frame(width: 150)
-                .onChange(of: timePeriod, perform: loadMovies)
+                .onChange(of: timePeriod, perform: { value in
+                                    loadMovies(value)
+                                })
             }
             .padding(.horizontal)
             
