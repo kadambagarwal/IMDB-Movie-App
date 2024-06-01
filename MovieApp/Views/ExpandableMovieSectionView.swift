@@ -12,13 +12,14 @@ struct ExpandableMovieSectionView: View {
     @Binding var movies: [Movie]
     var loadMovies: (String, MovieEndpoint) -> Void
     var endpoint: MovieEndpoint
-    @State private var isExpanded = false
+    @State private var isExpanded = true
     
     init(title: String, movies: Binding<[Movie]>, loadMovies: @escaping (String, MovieEndpoint) -> Void, endpoint: MovieEndpoint) {
         self.title = title
         self._movies = movies
         self.loadMovies = loadMovies
         self.endpoint = endpoint
+        self.loadMovies("Day", endpoint)
     }
     
     var body: some View {
