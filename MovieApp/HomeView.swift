@@ -4,8 +4,25 @@
 //
 //  Created by kadagarw on 31/05/24.
 //
-
 import SwiftUI
+
+struct MainView: View {
+    var body: some View {
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+            
+            MyPlaylistsView()
+                .tabItem {
+                    Image(systemName: "music.note.list")
+                    Text("My Playlists")
+                }
+        }
+    }
+}
 
 struct HomeView: View {
     @ObservedObject private var movieService = MovieService()
@@ -31,8 +48,8 @@ struct SectionSpacer: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        MainView()
     }
 }

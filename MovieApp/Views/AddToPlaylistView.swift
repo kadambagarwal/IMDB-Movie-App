@@ -36,7 +36,8 @@ struct AddToPlaylistView: View {
                 Section(header: Text("Create New Playlist")) {
                     TextField("Enter Playlist Name", text: $newPlaylistName)
                     Button("Create Playlist") {
-                        playlistManager.createPlaylist(name: newPlaylistName)
+                        let playlistMovie = playlistManager.movieToPlaylistMovie(movie: movie)
+                        playlistManager.createPlaylist(name: newPlaylistName, movie: playlistMovie)
                         presentationMode.wrappedValue.dismiss()
                     }
                 }

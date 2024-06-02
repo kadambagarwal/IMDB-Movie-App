@@ -5,8 +5,9 @@
 //  Created by kadagarw on 02/06/24.
 //
 import RealmSwift
+import Foundation
 
-class PlaylistManager {
+class PlaylistManager: ObservableObject {
     let realm = try! Realm()
 
     func addMovieToPlaylist(playlistId: String, movie: PlaylistMovie) {
@@ -17,11 +18,11 @@ class PlaylistManager {
         }
     }
 
-    func createPlaylist(name: String) {
+    func createPlaylist(name: String, movie: PlaylistMovie) {
         let playlist = Playlist()
         playlist.name = name
-
         try! realm.write {
+            playlist.movies.append(movie)
             realm.add(playlist)
         }
     }

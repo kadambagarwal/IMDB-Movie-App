@@ -11,6 +11,7 @@
 		9270D0D62C0C799E001398DD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9270D0D52C0C799E001398DD /* RealmSwift */; };
 		927AE42A2C0C824A00DE7B30 /* PlaylistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AE4292C0C824A00DE7B30 /* PlaylistManager.swift */; };
 		927AE42C2C0C82CE00DE7B30 /* AddToPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AE42B2C0C82CE00DE7B30 /* AddToPlaylistView.swift */; };
+		927AE42F2C0C905600DE7B30 /* MyPlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AE42E2C0C905600DE7B30 /* MyPlaylistsView.swift */; };
 		9283CB132C09F872003750E1 /* MovieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB122C09F872003750E1 /* MovieAppApp.swift */; };
 		9283CB152C09F872003750E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB142C09F872003750E1 /* HomeView.swift */; };
 		9283CB172C09F875003750E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9283CB162C09F875003750E1 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		9270D0CD2C0BD563001398DD /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
 		927AE4292C0C824A00DE7B30 /* PlaylistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistManager.swift; sourceTree = "<group>"; };
 		927AE42B2C0C82CE00DE7B30 /* AddToPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistView.swift; sourceTree = "<group>"; };
+		927AE42E2C0C905600DE7B30 /* MyPlaylistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlaylistsView.swift; sourceTree = "<group>"; };
 		9283CB0F2C09F872003750E1 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283CB122C09F872003750E1 /* MovieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppApp.swift; sourceTree = "<group>"; };
 		9283CB142C09F872003750E1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -123,9 +125,9 @@
 		9283CB112C09F872003750E1 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
-				9283CB492C0B21FF003750E1 /* Views */,
 				9283CB122C09F872003750E1 /* MovieAppApp.swift */,
 				9283CB142C09F872003750E1 /* HomeView.swift */,
+				9283CB492C0B21FF003750E1 /* Views */,
 				927AE42D2C0C837C00DE7B30 /* Model */,
 				927AE4292C0C824A00DE7B30 /* PlaylistManager.swift */,
 				9283CB432C0B20FC003750E1 /* MovieService.swift */,
@@ -167,6 +169,7 @@
 				9283CB472C0B2155003750E1 /* ExpandableMovieSectionView.swift */,
 				9283CB412C0B20BC003750E1 /* MovieCardView.swift */,
 				927AE42B2C0C82CE00DE7B30 /* AddToPlaylistView.swift */,
+				927AE42E2C0C905600DE7B30 /* MyPlaylistsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				9283CB152C09F872003750E1 /* HomeView.swift in Sources */,
 				927AE42C2C0C82CE00DE7B30 /* AddToPlaylistView.swift in Sources */,
 				9283CB132C09F872003750E1 /* MovieAppApp.swift in Sources */,
+				927AE42F2C0C905600DE7B30 /* MyPlaylistsView.swift in Sources */,
 				9283CB422C0B20BC003750E1 /* MovieCardView.swift in Sources */,
 				9283CB482C0B2155003750E1 /* ExpandableMovieSectionView.swift in Sources */,
 				9283CB442C0B20FC003750E1 /* MovieService.swift in Sources */,
@@ -480,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MovieApp/Preview Content\"";
@@ -509,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MovieApp/Preview Content\"";
