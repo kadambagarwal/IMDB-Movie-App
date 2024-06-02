@@ -7,6 +7,11 @@
 import SwiftUI
 import Kingfisher
 
+/// `MyPlaylistsView` is a SwiftUI view that displays a list of the user's playlists.
+///
+/// The view includes a navigation view with a list of playlists. Each playlist is a navigation link that leads to a `PlaylistDetailView`.
+/// The `init` method initializes the view.
+/// The `body` property defines the UI and the behavior of the view.
 struct MyPlaylistsView: View {
     @ObservedObject var playlistManager = PlaylistManager()
     var body: some View {
@@ -27,6 +32,11 @@ struct MyPlaylistsView: View {
     }
 }
 
+/// `PlaylistDetailView` is a SwiftUI view that displays the details of a playlist, including a list of movies.
+///
+/// The view includes a list of movies in the playlist. Each movie is displayed with its poster, title, and rating.
+/// The `init` method initializes the view with a `Playlist` object.
+/// The `body` property defines the UI and the behavior of the view.
 struct PlaylistDetailView: View {
     private let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
     @ObservedObject var playlist: Playlist
@@ -57,7 +67,7 @@ struct PlaylistDetailView: View {
         }
         .navigationBarTitle(playlist.name)
         .onAppear {
-                    updatedPlaylist = playlistManager.fetchPlaylist(id: playlist.id)
-                }
+            updatedPlaylist = playlistManager.fetchPlaylist(id: playlist.id)
+        }
     }
 }

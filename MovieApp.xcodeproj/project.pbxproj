@@ -25,6 +25,7 @@
 		9283CB462C0B211B003750E1 /* TrendingSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB452C0B211B003750E1 /* TrendingSectionView.swift */; };
 		9283CB482C0B2155003750E1 /* ExpandableMovieSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283CB472C0B2155003750E1 /* ExpandableMovieSectionView.swift */; };
 		9283CB4B2C0B6FCE003750E1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9283CB4A2C0B6FCE003750E1 /* Kingfisher */; };
+		928C31A42C0CD97600E3A8A9 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C31A32C0CD97600E3A8A9 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		9283CB432C0B20FC003750E1 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		9283CB452C0B211B003750E1 /* TrendingSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingSectionView.swift; sourceTree = "<group>"; };
 		9283CB472C0B2155003750E1 /* ExpandableMovieSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableMovieSectionView.swift; sourceTree = "<group>"; };
+		928C31A32C0CD97600E3A8A9 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				9283CB412C0B20BC003750E1 /* MovieCardView.swift */,
 				927AE42B2C0C82CE00DE7B30 /* AddToPlaylistView.swift */,
 				927AE42E2C0C905600DE7B30 /* MyPlaylistsView.swift */,
+				928C31A32C0CD97600E3A8A9 /* RatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				9270D0CE2C0BD563001398DD /* PlaylistModel.swift in Sources */,
 				9283CB3D2C0A31EC003750E1 /* MovieDatabase.swift in Sources */,
 				9283CB462C0B211B003750E1 /* TrendingSectionView.swift in Sources */,
+				928C31A42C0CD97600E3A8A9 /* RatingView.swift in Sources */,
 				927AE42A2C0C824A00DE7B30 /* PlaylistManager.swift in Sources */,
 				9283CB152C09F872003750E1 /* HomeView.swift in Sources */,
 				927AE42C2C0C82CE00DE7B30 /* AddToPlaylistView.swift in Sources */,

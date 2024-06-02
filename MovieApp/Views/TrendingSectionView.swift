@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+// `TrendingSectionView` is a SwiftUI view that displays a list of trending movies.
+///
+/// It includes a title, a segmented picker for selecting the time period (Today or This week),
+/// and a horizontal scroll view that displays the movies in a lazy horizontal stack.
+///
+/// The `loadMovies` function is called when the view appears and whenever the time period changes.
+/// This function should fetch the movies for the selected time period (day/week) and update the `movies` binding.
+///
+/// The `init` method also customizes the appearance of `UISegmentedControl` to match the design of the app.
 struct TrendingSectionView: View {
     var title: String
     @Binding var movies: [Movie]
@@ -38,7 +47,7 @@ struct TrendingSectionView: View {
                 .frame(width: 150)
                 .onChange(of: timePeriod, perform: { value in
                     loadMovies(.trending, value)
-                                })
+                })
             }
             .padding(.horizontal)
             

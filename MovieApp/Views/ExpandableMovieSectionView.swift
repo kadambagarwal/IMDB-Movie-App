@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+/// `ExpandableMovieSectionView` is a SwiftUI view that displays a list of movies in a specific category (Upcoming/Top Rated/Now Playing).
+///
+/// It includes a title, a button for expanding and collapsing the section, and a horizontal scroll view that displays the movies in a lazy horizontal stack.
+///
+/// The `loadMovies` function is called when the view appears and whenever the section is expanded.
+/// This function should fetch the movies for the specified endpoint and update the `movies` binding.
+///
+/// The `init` method initializes the view with a title, a binding to the movies array, a function for loading the movies, and an endpoint for fetching the movies.
 struct ExpandableMovieSectionView: View {
     var title: String
     @Binding var movies: [Movie]

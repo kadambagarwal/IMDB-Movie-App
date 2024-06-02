@@ -8,6 +8,13 @@
 import SwiftUI
 import Kingfisher
 
+/// `MovieCardView` is a SwiftUI view that displays a movie card with a poster, title, and rating.
+///
+/// It includes a context menu that allows the user to add the movie to a playlist.
+/// When the "Add to Playlist" button is clicked, an `AddToPlaylistView` is presented.
+///
+/// The `init` method initializes the view with a `Movie` object.
+/// The `body` property defines the UI and the behavior of the view.
 struct MovieCardView: View {
     @State private var showSheet = false
     var movie: Movie
@@ -48,27 +55,6 @@ struct MovieCardView: View {
         }
         .sheet(isPresented: $showSheet) {
             AddToPlaylistView(movie: movie)
-        }
-    }
-
-}
-
-struct RatingView: View {
-    var value: Double
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.white)
-                .frame(width: 40, height: 40)
-            Circle()
-                .trim(from: 0.0, to: CGFloat(min(self.value, 1.0)))
-                .stroke(value >= 0.7 ? Color.green : (value >= 0.4 ? Color.yellow : Color.red), style: StrokeStyle(lineWidth: 6, lineCap: .round))
-                .rotationEffect(Angle(degrees: -90))
-                .frame(width: 40, height: 40)
-            Text(String(format: "%.1f", min(self.value, 1.0)*10.0))
-                .font(.footnote)
-                .bold()
         }
     }
 }

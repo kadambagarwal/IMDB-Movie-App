@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+/// MainView is the root view of the application. It contains a TabView with two tabs: HomeView and MyPlaylistsView.
 struct MainView: View {
     var body: some View {
         TabView {
@@ -24,6 +25,8 @@ struct MainView: View {
     }
 }
 
+/// HomeView displays a list of movies in different categories: Trending, Now Playing, Upcoming, and Top Rated.
+/// It uses the MovieService to fetch the movies from an API.
 struct HomeView: View {
     @ObservedObject private var movieService = MovieService()
     
@@ -42,12 +45,14 @@ struct HomeView: View {
     }
 }
 
+/// SectionSpacer is a helper view that provides a fixed amount of spacing between sections.
 struct SectionSpacer: View {
     var body: some View {
         Spacer().frame(height: 20)
     }
 }
 
+/// MainView_Previews provides a preview of the MainView for the Xcode canvas.
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
