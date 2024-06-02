@@ -19,7 +19,7 @@ struct MovieResponse: Codable {
 }
 
 enum MovieEndpoint: String {
-    case popular = "popular"
+    case upcoming = "upcoming"
     case nowPlaying = "now_playing"
     case topRated = "top_rated"
     case trending = "trending"

@@ -28,7 +28,7 @@ class MovieService: ObservableObject {
                         self.trendingMovies = movieResponse.results
                     case .nowPlaying:
                         self.nowPlayingMovies = movieResponse.results
-                    case .popular:
+                    case .upcoming:
                         self.popularMovies = movieResponse.results
                     case .topRated:
                         self.topRatedMovies = movieResponse.results

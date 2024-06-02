@@ -17,7 +17,7 @@ struct HomeView: View {
                 SectionSpacer()
                 ExpandableMovieSectionView(title: "Now Playing", movies: $movieService.nowPlayingMovies, loadMovies: movieService.loadMovies, endpoint: .nowPlaying)
                 SectionSpacer()
-                ExpandableMovieSectionView(title: "Upcoming", movies: $movieService.popularMovies, loadMovies: movieService.loadMovies, endpoint: .popular)
+                ExpandableMovieSectionView(title: "Upcoming", movies: $movieService.popularMovies, loadMovies: movieService.loadMovies, endpoint: .upcoming)
                 SectionSpacer()
                 ExpandableMovieSectionView(title: "Top Rated", movies: $movieService.topRatedMovies, loadMovies: movieService.loadMovies, endpoint: .topRated)
             }
