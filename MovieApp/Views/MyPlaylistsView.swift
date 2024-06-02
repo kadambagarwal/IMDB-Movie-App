@@ -12,7 +12,7 @@ struct MyPlaylistsView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(playlistManager.getAllPlaylists(), id: \.id) { playlist in
+                ForEach(playlistManager.playlists, id: \.id) { playlist in
                     NavigationLink(destination: PlaylistDetailView(playlist: playlist)) {
                         Text(playlist.name)
                             .font(.headline)
@@ -20,16 +20,22 @@ struct MyPlaylistsView: View {
                 }
             }
             .navigationBarTitle("My Playlists")
+            .onAppear {
+                playlistManager.fetchPlaylists()
+            }
         }
     }
 }
 
 struct PlaylistDetailView: View {
     private let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
-    var playlist: Playlist
+    @ObservedObject var playlist: Playlist
+    @ObservedObject var playlistManager = PlaylistManager()
+    @State private var updatedPlaylist: Playlist?
+    
     var body: some View {
         List {
-            ForEach(playlist.movies, id: \.id) { movie in
+            ForEach(updatedPlaylist?.movies ?? playlist.movies, id: \.id) { movie in
                 HStack {
                     ZStack(alignment: .bottomLeading) {
                         if let url = URL(string: "\(imageBaseUrl)\(movie.poster_path)") {
@@ -50,5 +56,8 @@ struct PlaylistDetailView: View {
             }
         }
         .navigationBarTitle(playlist.name)
+        .onAppear {
+                    updatedPlaylist = playlistManager.fetchPlaylist(id: playlist.id)
+                }
     }
 }

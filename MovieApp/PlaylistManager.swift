@@ -9,7 +9,8 @@ import Foundation
 
 class PlaylistManager: ObservableObject {
     let realm = try! Realm()
-
+    @Published var playlists: [Playlist] = []
+    
     func addMovieToPlaylist(playlistId: String, movie: PlaylistMovie) {
         if let playlist = realm.object(ofType: Playlist.self, forPrimaryKey: playlistId) {
             try! realm.write {
@@ -29,6 +30,14 @@ class PlaylistManager: ObservableObject {
 
     func getAllPlaylists() -> Results<Playlist> {
         return realm.objects(Playlist.self)
+    }
+    
+    func fetchPlaylists() {
+            let results = realm.objects(Playlist.self)
+            playlists = Array(results)
+    }
+    func fetchPlaylist(id: String) -> Playlist? {
+            return realm.object(ofType: Playlist.self, forPrimaryKey: id)
     }
     
     func movieToPlaylistMovie(movie: Movie) -> PlaylistMovie {
