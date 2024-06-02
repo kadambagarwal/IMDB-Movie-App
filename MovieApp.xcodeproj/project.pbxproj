@@ -100,6 +100,8 @@
 			children = (
 				9270D0CD2C0BD563001398DD /* PlaylistModel.swift */,
 				9283CB3C2C0A31EC003750E1 /* MovieDatabase.swift */,
+				927AE4292C0C824A00DE7B30 /* PlaylistManager.swift */,
+				9283CB432C0B20FC003750E1 /* MovieService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,8 +133,6 @@
 				9283CB142C09F872003750E1 /* HomeView.swift */,
 				9283CB492C0B21FF003750E1 /* Views */,
 				927AE42D2C0C837C00DE7B30 /* Model */,
-				927AE4292C0C824A00DE7B30 /* PlaylistManager.swift */,
-				9283CB432C0B20FC003750E1 /* MovieService.swift */,
 				9283CB162C09F875003750E1 /* Assets.xcassets */,
 				9283CB182C09F875003750E1 /* Preview Content */,
 			);
