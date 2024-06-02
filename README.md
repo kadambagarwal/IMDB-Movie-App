@@ -7,4 +7,4 @@ This application serves as a one-stop solution for movie enthusiasts, offering a
 
 
 ## Platforms
-Currently IMDB-SwiftUI runs on iPhone and iPad. 
+Currently IMDB-Movie-App runs on iPhone and iPad. 
